@@ -6,13 +6,8 @@ png("plot3.png", width=480,height=480)
 
 fullDate <- paste(data$Date, data$Time, sep=" ") #concat date + time
 posixDate = strptime(fullDate, format = "%d/%m/%Y %H:%M:%S") #determine date format
-plot(
-    posixDate, 
-    data$Global_active_power, 
-    type='l', 
-    ylab="Energy sub metering", 
-    xlab=""
-)
+
+
 
 plot(
     x=posixDate, 
@@ -30,7 +25,8 @@ legend(
     cex=1, 
     lty = 1, 
     col = c("black", "red", "blue"), 
-    legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3")
+    legend = c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"),
+    bty = "n"
 )
 
 dev.off()
